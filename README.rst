@@ -52,6 +52,9 @@ Protocol
 UML
 ~~~
 
+.. image:: docs/CryptoFun.png
+    :width: 80%
+
 Effort estimate
 ===============
 
@@ -77,6 +80,7 @@ Jakob Klepp
 Task                             Date       From  To    Duration
 ================================ ========== ===== ===== =========
 Starting documentation           2014-01-28 10:10 10:50   00:40  
+Application design (UML)         2014-01-28 19:00 19:50   00:50
 **Total**                                               **00:40**
 ================================ ========== ===== ===== =========
 
