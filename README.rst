@@ -40,6 +40,17 @@ Punkte: 16
 * Entschlüsseln der Nachricht: 4 Punkte
 * Sniffer: 4 Punkte
 
+Cryptographic libraries
+=======================
+
+Design
+======
+
+Protocol
+~~~~~~~~
+
+UML
+~~~
 
 Effort estimate
 ===============
@@ -59,13 +70,45 @@ Testing                           02:00
 Time recording
 ==============
 
-================================ ========== ===== ===== ========
+Jakob Klepp
+~~~~~~~~~~~
+
+================================ ========== ===== ===== =========
 Task                             Date       From  To    Duration
-================================ ========== ===== ===== ========
-================================ ========== ===== ===== ========
+================================ ========== ===== ===== =========
+Starting documentation           2014-01-28 10:10 10:50   00:40  
+**Total**                                               **00:40**
+================================ ========== ===== ===== =========
+
+Andreas Vogt
+~~~~~~~~~~~~
+
+================================ ========== ===== ===== =========
+Task                             Date       From  To    Duration
+================================ ========== ===== ===== =========
+**Total**                                               **00:00**
+================================ ========== ===== ===== =========
 
 Bibliography
 ============
+
+.. _1:
+
+[1]  "libnacl: Python bindings to NaCl",
+     https://libnacl.readthedocs.org/en/latest/
+     last visited: 2015-01-28
+
+.. _2:
+
+[2]  "NaCl: Networking and Cryptography library",
+     http://nacl.cr.yp.to/
+     last visited: 2015-01-28
+
+.. _3:
+
+[3]  "Python 3.4.2 Documentation: socket — Low-level networking interface",
+     https://docs.python.org/3/library/socket.html
+     last visited: 2015-01-28
 
 .. header::
 
