@@ -52,6 +52,7 @@ With it you can create a public and private key(keypar) with following method:
 
 In the variable bob is now a public and private key. To get only
 the public key you can use following method:
+
 .. code:: python
 
     bob.pk() 
@@ -62,7 +63,9 @@ key from Person B.
 
 Now Person B can create a new Key which can encrypt and decrypt.
 This can be done with the method :
+
 .. code:: python
+
     Newbox = libnacl.secret.SecretBox()
 
 Now we have to encrypt this key and send it to Person A.
@@ -70,7 +73,9 @@ Since Person A has the publickey from Person B and and vice versa we
 can simply decrypt the key and encrypt it with following methods.
 
 Person B :
+
 .. code:: python
+
     B_box = libnacl.public.Box(B.sk, A.pk)
     encr_key = B_box.encrypt(NewBox.sk)
 
@@ -78,7 +83,9 @@ Now we send this to Person A and he can decrypt it since he has the
 public key from B.
 
 Person A :
+
 .. code:: python
+
     A_box = libnacl.public.Box(A.sk, B.pk)
     decr_key = A_box.encrypt(encr_key)
     Newbox = libnacl.secret.SecretBox(decr_key)
@@ -89,6 +96,7 @@ or encrypt messages and send them to Person B where he can also decrypt them.
 Small example with 2 Clients (Bob,Alice)
 
 .. code:: python
+
     __author__ = 'schueler'
     import libnacl.public
     import libnacl.secret
@@ -175,6 +183,7 @@ In Python you can create a simple Sniffer only with the socket libary.
 Example of a simple sniffer:
 
 .. code:: python
+
     #Packet sniffer in python
     #For Linux
      
@@ -225,7 +234,8 @@ Task                             Date       From  To    Duration
 Testing Ptyhon Libary libnacl    2015-01-28 19:00 20:00   01:00
 encrypt and decrypt example      2015-01-29 12:00 14:30   02:30
 Documentetaion ecrypt decryp     2015-01-29 15:30 16:45   01:15
-**Total**                                               **04:45**
+Sniffer example                  2015-01-29 16:45 17:15   00:30
+**Total**                                               **05:15**
 ================================ ========== ===== ===== =========
 
 
