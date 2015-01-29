@@ -40,8 +40,21 @@ Punkte: 16
 * Entschlüsseln der Nachricht: 4 Punkte
 * Sniffer: 4 Punkte
 
-Cryptographic libraries
+Cryptographic library
 =======================
+We used the python library libnacl. 
+With it you can create a public and private key with following method:
+
+bob = libnacl.public.SecretKey()
+
+In the variable bob is now a public and private key. To get only
+the public key you can use following method:
+
+bob.hex_pk() 
+
+This will return only the public key which can now be used to send it
+to Person B.
+
 
 Design
 ======
@@ -104,8 +117,10 @@ Andreas Vogt
 ================================ ========== ===== ===== =========
 Task                             Date       From  To    Duration
 ================================ ========== ===== ===== =========
+Testing Ptyhon Libary libnacl    2014-01-28 19:00 20:00   01:00
 **Total**                                               **00:00**
 ================================ ========== ===== ===== =========
+
 
 Bibliography
 ============
