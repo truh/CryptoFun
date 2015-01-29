@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
+import base64
 import libnacl
 import libnacl.public
 import libnacl.secret
 import libnacl.utils
-
 import socket
 import sys
 
@@ -18,12 +18,12 @@ def key_exchange(conn):
     # receive clients public key
     client_pk = conn.recv(1024)
     print("Received public key from client: {client_pk}"
-        .format(client_pk=base64.b64encode(client_pk)))
+        .format(client_pk=base64.b16encode(client_pk)))
 
     # send public key to client
-    s.sendall(server_keypair.pk)
+    conn.sendall(server_keypair.pk)
     print("Send public key to client: {server_pk}"
-        .format(server_pk=base64.b64encode(server_keypair.pk)))
+        .format(server_pk=base64.b16encode(server_keypair.pk)))
 
     # create encryption box
     box = libnacl.public.Box(server_keypair.sk, client_pk)
@@ -31,7 +31,7 @@ def key_exchange(conn):
     # generate symmetric encryption key
     symmetric_box = libnacl.secret.SecretBox()
     print("Sent symmetric key to client: {symmetric_key}"
-        .format(symmetric_key=base64.b64encode(symmetric_box.sk)))
+        .format(symmetric_key=base64.b16encode(symmetric_box.sk)))
 
     # encrypt symmetric encryption key
     encrypted_symmetric_key = box.encrypt(symmetric_box.sk)
@@ -48,11 +48,13 @@ def serve(host, port, encrypted=False):
     s.listen(1)
     conn, addr = s.accept()
 
+    print('Connected by', addr)
+
     symmetric_box = FakeSecretBox()
     if encrypted:
-        symmetric_box = key_exchange(s)
+        symmetric_box = key_exchange(conn)
+        print('Established encrypted connection.')
 
-    print('Connected by', addr)
     while True:
         data = conn.recv(1024)
         if not data: break
@@ -63,6 +65,8 @@ def serve(host, port, encrypted=False):
 
 if __name__ == '__main__':
     port = -1
+    encrypted = False
+
     try:
         port = sys.argv
         port = port[1]
@@ -75,4 +79,7 @@ if __name__ == '__main__':
         print('err: ' + str(e))
         sys.exit(1)
 
-    serve('0.0.0.0', port)
+    if len(sys.argv) > 2:
+        encrypted = sys.argv[2] == 'encrypted'
+
+    serve('0.0.0.0', port, encrypted=encrypted)
