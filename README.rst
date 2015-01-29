@@ -156,6 +156,9 @@ that saved the sniffed data in a file.
 Test
 ====
 
+Unecrypted communication
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. code:: txt
     
     Data : #####
@@ -178,6 +181,58 @@ Test
     Data : ######
     Data : ######
     Data : 
+
+.. code:: txt
+
+    [schueler@Linux-PC CryptoFun]$ python Client.py 10.0.105.23 33335
+    This is a test.
+    ^CTraceback (most recent call last):
+      File "Client.py", line 83, in <module>
+        loop(host, port, encrypted=encrypted)
+      File "Client.py", line 52, in loop
+        line = sys.stdin.readline()
+    KeyboardInterrupt
+
+Encrypted communication
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: txt
+
+    Data : #####
+    Data : Yyú_
+    Data : ######
+    Data : #####
+    Data : ÊÜ#
+    Data : ######
+    Data : #####
+    Data : (mRH
+    Data : ######
+    Data : 
+    Data : ##
+    Data : 
+    Data : Y#1I##ºÿp##^Fþ#D#Ðo;
+    q
+    Data : ######
+    Data : éü#
+    ù¦EZçcÍ³#3#á+ü°ÕÄ3òÈ%#.d
+    Data : 
+    Data : 
+
+.. code:: txt
+
+    [schueler@Linux-PC CryptoFun]$ python Client.py 10.0.105.23 33333 encrypted
+    Send public key to server: b'5912948531884903901BBA95FF701B1B5E46FE069F441983D06F9D3B0D819671'
+    Received public key from client: b'E9FC1C910D81F9A6455AE763CDB3193315E1932BFCB0D5C49433F2C825032E64'
+    Received symmetric key from the server: b'AE4C40F7AABBBF120982072EA46D4CBAC6E671B60523618FD4E0201DC87DB369'
+    This text is encrypted.
+    ^CTraceback (most recent call last):
+      File "Client.py", line 83, in <module>
+        loop(host, port, encrypted=encrypted)
+      File "Client.py", line 52, in loop
+        line = sys.stdin.readline()
+    KeyboardInterrupt
+
+
 
 
 
