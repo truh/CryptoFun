@@ -128,48 +128,6 @@ Small example with 2 Clients (Bob,Alice)
     decr= box2.decrypt(encr)
     print(decr)
 
-Design
-======
-
-Protocol
-~~~~~~~~
-
-To keep our protocol simple we will use terminated strings as our base concept.
-Messages are terminated by an instance of the ASCII
-"End Transmission Block character", 0xC0.
-
-Control streams
-~~~~~~~~~~~~~~~
-
-Normal text messages are not the only thing that has to be transmitted between
-multiple instances of the application, for example cryptographic keys have to
-be transmitted too. For these control information, packets preceded with the
-character "Start of Heading", 0x01 are used.
-
-CONNECT
--------
-
-Starts a session. The host and port the application is listening is appended
-after the "CONNECT" and a space.
-
-INIT_PUB
---------
-
-Starts an asymmetrical encrypted session. The public key is appended after the
-"INIT_PUB" and a space.
-
-INIT_SHARED
------------
-
-Starts a symmetrical encrypted session. The key has to be transmitted
-manually since it is not advisable to send it over an unencrypted
-connection.
-
-INIT_HYBRID
------------
-Starts a symmetrical encrypted session. The key is encrypted with the
-receivers public key and appended after the "INIT_HYBRID" and a space.
-
 Sniffer
 ~~~~~~~
 
