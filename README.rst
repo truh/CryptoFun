@@ -123,12 +123,6 @@ INIT_HYBRID
 Starts a symmetrical encrypted session. The key is encrypted with the
 receivers public key and appended after the "INIT_HYBRID" and a space.
 
-UML
-~~~
-
-.. image:: docs/CryptoFun.png
-    :width: 80%
-
 Effort estimate
 ===============
 
