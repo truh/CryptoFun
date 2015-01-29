@@ -50,7 +50,7 @@ bob = libnacl.public.SecretKey()
 In the variable bob is now a public and private key. To get only
 the public key you can use following method:
 
-bob.hex_pk() 
+bob.pk() 
 
 This will return only the public key which can now be used to send it
 to Person B.
