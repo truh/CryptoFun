@@ -41,7 +41,8 @@ Punkte: 16
 * Sniffer: 4 Punkte
 
 Cryptographic library
-=======================
+=====================
+
 We used the python library libnacl. 
 With it you can create a public and private key with following method:
 
@@ -74,6 +75,30 @@ multiple instances of the application, for example cryptographic keys have to
 be transmitted too. For these control information, packets preceded with the
 character "Start of Heading", 0x01 are used.
 
+CONNECT
+-------
+
+Starts a session. The host and port the application is listening is appended
+after the "CONNECT" and a space.
+
+INIT_PUB
+--------
+
+Starts an asymmetrical encrypted session. The public key is appended after the
+"INIT_PUB" and a space.
+
+INIT_SHARED
+-----------
+
+Starts a symmetrical encrypted session. The key has to be transmitted
+manually since it is not advisable to send it over an unencrypted
+connection.
+
+INIT_HYBRID
+-----------
+Starts a symmetrical encrypted session. The key is encrypted with the
+receivers public key and appended after the "INIT_HYBRID" and a space.
+
 UML
 ~~~
 
@@ -85,7 +110,7 @@ Effort estimate
 
 ================================ ========
 Task                             Estimate
-                                 [hh:mm]
+                                  hh:mm
 ================================ ========
 Evaluation of crypto libraries    02:00
 Protocol design                   02:00
