@@ -41,7 +41,8 @@ Punkte: 16
 * Sniffer: 4 Punkte
 
 Cryptographic library
-=======================
+=====================
+
 We used the python library libnacl. 
 With it you can create a public and private key with following method:
 
@@ -62,6 +63,42 @@ Design
 Protocol
 ~~~~~~~~
 
+To keep our protocol simple we will use terminated strings as our base concept.
+Messages are terminated by an instance of the ASCII
+"End Transmission Block character", 0xC0.
+
+Control streams
+~~~~~~~~~~~~~~~
+
+Normal text messages are not the only thing that has to be transmitted between
+multiple instances of the application, for example cryptographic keys have to
+be transmitted too. For these control information, packets preceded with the
+character "Start of Heading", 0x01 are used.
+
+CONNECT
+-------
+
+Starts a session. The host and port the application is listening is appended
+after the "CONNECT" and a space.
+
+INIT_PUB
+--------
+
+Starts an asymmetrical encrypted session. The public key is appended after the
+"INIT_PUB" and a space.
+
+INIT_SHARED
+-----------
+
+Starts a symmetrical encrypted session. The key has to be transmitted
+manually since it is not advisable to send it over an unencrypted
+connection.
+
+INIT_HYBRID
+-----------
+Starts a symmetrical encrypted session. The key is encrypted with the
+receivers public key and appended after the "INIT_HYBRID" and a space.
+
 UML
 ~~~
 
@@ -73,7 +110,6 @@ Effort estimate
 
 ================================ ========
 Task                             Estimate
-                                 [hh:mm]
 ================================ ========
 Evaluation of crypto libraries    02:00
 Protocol design                   02:00
@@ -92,9 +128,10 @@ Jakob Klepp
 ================================ ========== ===== ===== =========
 Task                             Date       From  To    Duration
 ================================ ========== ===== ===== =========
-Starting documentation           2014-01-28 10:10 10:50   00:40  
-Application design (UML)         2014-01-28 19:00 19:50   00:50
-**Total**                                               **00:40**
+Starting documentation           2015-01-28 10:10 10:50   00:40
+Application design (UML)         2015-01-28 19:00 19:50   00:50
+Protocol design                  2015-01-29 12:30 13:00   00:30
+**Total**                                               **02:00**
 ================================ ========== ===== ===== =========
 
 Andreas Vogt
@@ -103,7 +140,7 @@ Andreas Vogt
 ================================ ========== ===== ===== =========
 Task                             Date       From  To    Duration
 ================================ ========== ===== ===== =========
-Testing Ptyhon Libary libnacl    2014-01-28 19:00 20:00   01:00
+Testing Ptyhon Libary libnacl    2015-01-28 19:00 20:00   01:00
 **Total**                                               **00:00**
 ================================ ========== ===== ===== =========
 
