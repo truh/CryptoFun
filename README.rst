@@ -170,12 +170,6 @@ INIT_HYBRID
 Starts a symmetrical encrypted session. The key is encrypted with the
 receivers public key and appended after the "INIT_HYBRID" and a space.
 
-UML
-~~~
-
-.. image:: docs/CryptoFun.png
-    :width: 80%
-
 Sniffer
 ~~~~~~~
 
@@ -222,7 +216,9 @@ Task                             Date       From  To    Duration
 Starting documentation           2015-01-28 10:10 10:50   00:40
 Application design (UML)         2015-01-28 19:00 19:50   00:50
 Protocol design                  2015-01-29 12:30 13:00   00:30
-**Total**                                               **02:00**
+socket prototyping               2015-01-29 13:00 14:15   01:15
+socket chat                      2015-01-29 16:00 17:30   01:30
+**Total**                                               **04:45**
 ================================ ========== ===== ===== =========
 
 Andreas Vogt
