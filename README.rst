@@ -149,7 +149,37 @@ Example for a simple sniffer:
       print s.recvfrom(65565)
 
 This will print out no useful information but works.
-We used the Code from : 
+We used the Code from [4] , since it was written for python 2 we had to update it.
+Some braclets were missing and the output had to be decoded. We also added a function
+that saved the sniffed data in a file.
+
+Test
+====
+
+.. code:: txt
+    
+    Data : #####
+    Data : VáÄ
+    Data : ######
+    Data : 
+    Data : ##
+    Data : 
+    Data : #####
+    Data : C²P´
+    Data : ######
+    Data : This is a test.
+
+    Data : ######
+    Data : #####
+    Data : óª
+
+    Data : ######
+    Data : 
+    Data : ######
+    Data : ######
+    Data : 
+
+
 
 Effort estimate
 ===============
@@ -218,6 +248,12 @@ Bibliography
 [3]  "Python 3.4.2 Documentation: socket — Low-level networking interface",
      https://docs.python.org/3/library/socket.html
      last visited: 2015-01-28
+
+.. _4:
+
+[4]  "Code a network packet sniffer in python for Linux"
+     http://www.binarytides.com/python-packet-sniffer-code-linux/
+     last visited: 2015-01-30
 
 .. header::
 
