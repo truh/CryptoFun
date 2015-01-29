@@ -174,7 +174,7 @@ Sniffer
 ~~~~~~~
 
 In Python you can create a simple Sniffer only with the socket libary.
-Example of a simple sniffer:
+Example for a simple sniffer:
 
 .. code:: python
 
@@ -189,6 +189,9 @@ Example of a simple sniffer:
     # receive a packet
     while True:
       print s.recvfrom(65565)
+
+This will print out no useful information but works.
+We used the Code from : 
 
 Effort estimate
 ===============
@@ -230,9 +233,10 @@ Task                             Date       From  To    Duration
 ================================ ========== ===== ===== =========
 Testing Ptyhon Libary libnacl    2015-01-28 19:00 20:00   01:00
 encrypt and decrypt example      2015-01-29 12:00 14:30   02:30
-Documentetaion ecrypt decryp     2015-01-29 15:30 16:45   01:15
+Documentetaion ecrypt decrypt    2015-01-29 15:30 16:45   01:15
 Sniffer example                  2015-01-29 16:45 17:15   00:30
-**Total**                                               **05:15**
+Sniffer-Programm                 2015-01-29 17:15 20:15   03:00
+**Total**                                               **08:15**
 ================================ ========== ===== ===== =========
 
 
