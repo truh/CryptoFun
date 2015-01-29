@@ -83,8 +83,6 @@ UML
 Effort estimate
 ===============
 
-The protocol does not only co
-
 ================================ ========
 Task                             Estimate
                                  [hh:mm]
