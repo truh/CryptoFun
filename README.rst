@@ -168,6 +168,25 @@ UML
 .. image:: docs/CryptoFun.png
     :width: 80%
 
+Sniffer
+~~~~~~~
+
+In Python you can create a simple Sniffer only with the socket libary.
+Example of a simple sniffer:
+
+.. code:: python
+    #Packet sniffer in python
+    #For Linux
+     
+    import socket
+     
+    #create an INET, raw socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+     
+    # receive a packet
+    while True:
+      print s.recvfrom(65565)
+
 Effort estimate
 ===============
 
@@ -205,7 +224,8 @@ Task                             Date       From  To    Duration
 ================================ ========== ===== ===== =========
 Testing Ptyhon Libary libnacl    2015-01-28 19:00 20:00   01:00
 encrypt and decrypt example      2015-01-29 12:00 14:30   02:30
-**Total**                                               **03:30**
+Documentetaion ecrypt decryp     2015-01-29 15:30 16:45   01:15
+**Total**                                               **04:45**
 ================================ ========== ===== ===== =========
 
 
