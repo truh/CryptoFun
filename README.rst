@@ -131,7 +131,8 @@ Task                             Date       From  To    Duration
 Starting documentation           2015-01-28 10:10 10:50   00:40
 Application design (UML)         2015-01-28 19:00 19:50   00:50
 Protocol design                  2015-01-29 12:30 13:00   00:30
-**Total**                                               **02:00**
+socket prototyping               2015-01-29 13:00 14:15   01:15
+**Total**                                               **03:15**
 ================================ ========== ===== ===== =========
 
 Andreas Vogt
