@@ -57,3 +57,4 @@ target/
 
 README.pdf
 *.bak
+.idea
