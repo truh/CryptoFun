@@ -159,6 +159,9 @@ Test
 Unecrypted communication
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+Sniffer
+-------
+
 .. code:: txt
     
     Data : #####
@@ -182,6 +185,9 @@ Unecrypted communication
     Data : ######
     Data : 
 
+Client
+------
+
 .. code:: txt
 
     [schueler@Linux-PC CryptoFun]$ python Client.py 10.0.105.23 33335
@@ -193,8 +199,20 @@ Unecrypted communication
         line = sys.stdin.readline()
     KeyboardInterrupt
 
+Server
+------
+
+.. code:: txt
+
+    [jakob@manj CryptoFun]$ python Server.py 33335
+    Connected by ('10.0.105.99', 47449)
+    This is a test.
+
 Encrypted communication
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+Sniffer
+-------
 
 .. code:: txt
 
@@ -210,13 +228,16 @@ Encrypted communication
     Data : 
     Data : ##
     Data : 
-    Data : Y#1I##ºÿp##^Fþ#D#Ðo;
+    Data : Y#1I##ºÿp##^Fþ#D#Ðo;
     q
     Data : ######
     Data : éü#
     ù¦EZçcÍ³#3#á+ü°ÕÄ3òÈ%#.d
     Data : 
     Data : 
+
+Client
+------
 
 .. code:: txt
 
@@ -232,9 +253,18 @@ Encrypted communication
         line = sys.stdin.readline()
     KeyboardInterrupt
 
+Server
+------
 
+.. code:: txt
 
-
+    [jakob@manj CryptoFun]$ python Server.py 33333 encrypted
+    Connected by ('10.0.105.99', 47461)
+    Received public key from client: b'5912948531884903901BBA95FF701B1B5E46FE069F441983D06F9D3B0D819671'
+    Send public key to client: b'E9FC1C910D81F9A6455AE763CDB3193315E1932BFCB0D5C49433F2C825032E64'
+    Sent symmetric key to client: b'AE4C40F7AABBBF120982072EA46D4CBAC6E671B60523618FD4E0201DC87DB369'
+    Established encrypted connection.
+    This text is encrypted.
 
 Effort estimate
 ===============
