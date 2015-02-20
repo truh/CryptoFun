@@ -104,7 +104,7 @@ while True:
             #get data from the packet
             data = packet[h_size:]
 
-            print ('Data : ' + data.decode("UTF8"))
+            print ('Data : ' + data.decode("Latin1"))
 
         #UDP packets
         elif protocol == 17 :
@@ -134,5 +134,3 @@ while True:
         #some other IP packet like IGMP
         else :
             print ('Protocol other than TCP/UDP/ICMP')
-
-        print
